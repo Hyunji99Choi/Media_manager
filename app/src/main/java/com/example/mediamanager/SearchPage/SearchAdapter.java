@@ -35,7 +35,7 @@ public class SearchAdapter extends BaseAdapter {
 
     @Override
     public long getItemId(int position) {
-        return position;
+        return ((ListViewAdapterData)list.get(position)).getId();
     } //위치값을 반환, 아이디를 반환해도됨.
 
     @Override

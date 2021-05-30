@@ -47,9 +47,8 @@ public class SearchListview extends AppCompatActivity {
         myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long arg4) {
-                TextView textView = view.findViewById(R.id.id);
-                int id = Integer.parseInt(textView.getText().toString());
-
+                //클랙한 view의 id를 리턴 받는다 (adapter의 getitemid를 이용)
+                int id = (int) parent.getAdapter().getItemId(position);
 
                 Bundle dataBundle = new Bundle();
                 dataBundle.putInt("id",id);

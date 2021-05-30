@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/Title"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="TITLE"
+                android:textSize="23sp" />
+            <EditText
+                android:id="@+id/editTextTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:layout_weight="1"
+                android:inputType="text">
+                <requestFocus/>
+            </EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/Date"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="촬영일자"
+                android:textSize="23sp" />
+            <EditText
+                android:id="@+id/editTextDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                 android:ems="10"
+                android:layout_weight="1"
+                android:inputType="text"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/file"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="파일 경로명"
+                android:textSize="23sp" />
+            <EditText
+                android:id="@+id/editTextUrl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="8"
+                android:layout_weight="1"
+                android:enabled="false"/>
+            <Button
+                android:id="@+id/urlButton"
+                android:layout_width="65dp"
+                android:layout_height="wrap_content"
+                android:text="등록"
+                android:onClick="mediaButton"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/memo"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="메모"
+                android:textSize="23sp" />
+            <EditText
+                android:id="@+id/editTextMemo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="text"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textViewKind"
+            android:visibility="invisible"
+            android:layout_width="0dp"
+            android:layout_height="0dp"/>
+
+        <LinearLayout
+            android:id="@+id/mediaViewLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:visibility="gone"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="300dp"
+                android:layout_height="300dp"/>
+            <VideoView
+                android:id="@+id/videoView"
+                android:layout_width="300dp"
+                android:layout_height="300dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:orientation="horizontal">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="등록"
+                android:onClick="insert"
+                android:layout_weight="1"
+                android:id="@+id/save"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="정보 변경"
+                android:onClick="edit"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="20dp"
+                android:id="@+id/update"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="정보 삭제"
+                android:onClick="delete"
+                android:layout_weight="1"
+                android:id="@+id/delete"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</ScrollView>

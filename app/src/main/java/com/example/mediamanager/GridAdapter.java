@@ -2,7 +2,6 @@ package com.example.mediamanager;
 
 import android.app.Activity;
 import android.net.Uri;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -59,26 +58,26 @@ public class GridAdapter extends BaseAdapter {
         VideoView videoView = rowView.findViewById(R.id.videoView);
 
         gridViewAdapterData data = (gridViewAdapterData)list.get(position);
-        if(data.getKind().equals(IMAGE)){ //미디어가 이미지일 경우
+        if(data.getKind().equals(IMAGE)){ //view 내용(미디어)이 이미지일 경우
             imageView.setImageURI(Uri.parse(data.getUrl()));
             imageView.setVisibility(View.VISIBLE);
-            videoView.setVisibility(View.GONE);
+            videoView.setVisibility(View.GONE); //video view는 닫기(안보이기)
 
         }else if(data.getKind().equals(VIDEO)){ //미디어가 영상일 경우
             MediaController mc = new MediaController(context);
-            videoView.setMediaController(mc);
+            videoView.setMediaController(mc); //video controller 연결(재생/멈춤 등)
             videoView.setVideoPath(data.getUrl());
             videoView.setVisibility(View.VISIBLE);
-            imageView.setVisibility(View.GONE);
+            imageView.setVisibility(View.GONE); //image view는 닫기(안보이기)
 
             //많은 동영상이 한꺼번에 재생되면 오류가
             //생기기 때문에 재생 시작은 해주지 않는다.
             //videoView.start();
         }
-
         return rowView;
     }
 
+    //gridview 내용이 변경될때마다 호출하려고 만든 메소드
     public void resetAll(ArrayList list){
         this.list = list;
         this.notifyDataSetChanged();

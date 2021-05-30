@@ -17,12 +17,11 @@ import java.util.ArrayList;
 
  public class MainGridView extends AppCompatActivity {
 
-    int DISPLAY_INSERT = 0;
+     int DISPLAY_INSERT = 0;
 
      DBHelper mydb;
      GridView gridView;
      GridAdapter mAdapter;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +36,6 @@ import java.util.ArrayList;
         //gridview에 adapter 연결
         gridView = findViewById(R.id.GridView);
         gridView.setAdapter(mAdapter);
-
-
     }
 
     //액티비티가 전경에 위치할 때
@@ -50,7 +47,6 @@ import java.util.ArrayList;
          //gridview 다시 setting
          mAdapter.resetAll(mydb.getGridView());
      }
-
 
     //메뉴 inflate
     @Override
@@ -82,6 +78,5 @@ import java.util.ArrayList;
                 return super.onOptionsItemSelected(item);
         }
     }
-
 
 }

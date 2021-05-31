@@ -26,8 +26,8 @@ public class ListViewAdapterData {
         this.date = date;
     }
 
-    private int id;
-    private String title;
-    private String date;
+    private int id; //데이터 id
+    private String title; //TITLE
+    private String date; //촬영일자
 
 }

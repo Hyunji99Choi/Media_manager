@@ -36,14 +36,13 @@ public class SearchListview extends AppCompatActivity {
         editSearch = findViewById(R.id.editSearch);
 
         mydb = new DBHelper(this);
-        ArrayList array_List = mydb.getAllMovies();
+        ArrayList array_List = mydb.getAllMovies(); //db 모든 데이터 가져오기
         mAdapter = new SearchAdapter(this, array_List);
 
         myListView = findViewById(R.id.listView1);
-        myListView.setAdapter(mAdapter);
+        myListView.setAdapter(mAdapter); //adapter 세팅
 
-
-        //listview item 클릭 이벤트
+        //listview item(항목) 클릭 이벤트
         myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long arg4) {
@@ -52,13 +51,11 @@ public class SearchListview extends AppCompatActivity {
 
                 Bundle dataBundle = new Bundle();
                 dataBundle.putInt("id",id);
-                Log.w("id",""+id);
                 Intent intent = new Intent(getApplicationContext(), MediaUpdate.class);
-                intent.putExtras(dataBundle);
+                intent.putExtras(dataBundle); //intent에 해당 id 데이터 넣기
                 startActivity(intent);
             }
         });
-
 
     }
 
@@ -69,12 +66,10 @@ public class SearchListview extends AppCompatActivity {
         mAdapter.notifyDataSetChanged();
     }
 
-
+    //onResume 콜백 메소드로 listview 닦아주기
     @Override
     protected void onResume() {
         super.onResume();
         mAdapter.resetAll(mydb.getAllMovies());
     }
-
-
 }

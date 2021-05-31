@@ -35,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
                     //표지 액티비티 종료
                     finish();
                 }
-
             }
         });
         thread.start();

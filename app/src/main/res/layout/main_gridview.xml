@@ -14,5 +14,4 @@
         android:background="@color/cardview_shadow_start_color"
         android:padding="5dp"/>
 
-
 </LinearLayout>

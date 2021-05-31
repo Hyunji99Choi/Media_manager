@@ -59,14 +59,14 @@ public class GridAdapter extends BaseAdapter {
 
         gridViewAdapterData data = (gridViewAdapterData)list.get(position);
         if(data.getKind().equals(IMAGE)){ //view 내용(미디어)이 이미지일 경우
-            imageView.setImageURI(Uri.parse(data.getUrl()));
+            imageView.setImageURI(Uri.parse(data.getUrl())); //파일로 이미지 세팅
             imageView.setVisibility(View.VISIBLE);
             videoView.setVisibility(View.GONE); //video view는 닫기(안보이기)
 
         }else if(data.getKind().equals(VIDEO)){ //미디어가 영상일 경우
             MediaController mc = new MediaController(context);
             videoView.setMediaController(mc); //video controller 연결(재생/멈춤 등)
-            videoView.setVideoPath(data.getUrl());
+            videoView.setVideoPath(data.getUrl()); //파일 경로로 비디오 연결
             videoView.setVisibility(View.VISIBLE);
             imageView.setVisibility(View.GONE); //image view는 닫기(안보이기)
 

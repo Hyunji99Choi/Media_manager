@@ -16,12 +16,10 @@ public class SearchAdapter extends BaseAdapter {
     private Activity context;
     private ArrayList list;
 
-
     public SearchAdapter(Activity context, ArrayList list) {
         this.context = context;
         this.list = list;
-    }
-
+    } //생성자
 
     @Override
     public int getCount() {
@@ -40,25 +38,23 @@ public class SearchAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        LayoutInflater inflate = context.getLayoutInflater();
+        LayoutInflater inflate = context.getLayoutInflater(); //inflate
         View rowView = inflate.inflate(R.layout.view_listview,null);
 
-        TextView id = rowView.findViewById(R.id.id);
+        TextView id = rowView.findViewById(R.id.id); //요소 연결
         TextView title = rowView.findViewById(R.id.title);
         TextView date = rowView.findViewById(R.id.date);;
 
         ListViewAdapterData listdata = (ListViewAdapterData)list.get(position);
-        id.setText((String) Integer.toString(listdata.getId()));
+        id.setText((String) Integer.toString(listdata.getId())); //데이터 세팅
         title.setText((String) listdata.getTitle());
         date.setText((String) listdata.getDate());
 
         return rowView;
     }
 
-
     public void resetAll(ArrayList list){
         this.list = list;
         this.notifyDataSetChanged();
-    }
-
+    } //변경된 데이터 list에 적용
 }

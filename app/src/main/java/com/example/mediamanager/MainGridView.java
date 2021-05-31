@@ -1,4 +1,4 @@
- package com.example.mediamanager;
+package com.example.mediamanager;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
  public class MainGridView extends AppCompatActivity {
 
-     int DISPLAY_INSERT = 0;
+     int DISPLAY_INSERT = 0; //intent구분
 
      DBHelper mydb;
      GridView gridView;
@@ -40,11 +40,10 @@ import java.util.ArrayList;
 
     //액티비티가 전경에 위치할 때
     //즉, 화면이 다시 켜질때 실행
-    //db에 대한 변경사항을 반영
+    //gridview에 db에 대한 변경사항을 반영
      @Override
      protected void onResume() {
          super.onResume();
-         //gridview 다시 setting
          mAdapter.resetAll(mydb.getGridView());
      }
 
@@ -67,7 +66,6 @@ import java.util.ArrayList;
                 Intent intent1 = new Intent(this, MediaUpdate.class);
                 intent1.putExtras(bundle);
                 startActivity(intent1); //등록 액티비티 실행
-
                 return true;
             case R.id.search: //검색
                 Toast.makeText(this,"검색",Toast.LENGTH_SHORT).show();

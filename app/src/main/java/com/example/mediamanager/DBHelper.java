@@ -61,13 +61,13 @@ public class DBHelper extends SQLiteOpenHelper {
         Cursor res = db.rawQuery("select * from media where id="+id+"",null);
         return res;
     }
-
+    /*
     public int numberOfRows(){
         SQLiteDatabase db = this.getReadableDatabase();
         int numRows = (int) DatabaseUtils.queryNumEntries(db, MOVIES_TABLE_NAME);
         return numRows;
     }
-
+    */
     //데이터 갱신, 업데이트 update 메소드, id값으로 update
     public boolean updateMovie(Integer id, String title, String date, String path, String memo, String kinds){
         SQLiteDatabase db= this.getWritableDatabase();
